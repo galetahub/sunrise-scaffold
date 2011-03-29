@@ -1,0 +1,6 @@
+Manage
+==============
+
+rails generate sunrise_scaffold:manage ModelName
+
+rails generate sunrise_scaffold:manage ModelName --parent=ParentModel

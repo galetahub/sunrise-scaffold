@@ -2,7 +2,7 @@
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
-require File.join(File.dirname(__FILE__), 'lib', 'sunrise', 'version')
+require File.join(File.dirname(__FILE__), 'lib', 'sunrise_scaffold', 'version')
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -28,7 +28,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "sunrise-scaffold"
-    s.version = Sunrise::VERSION.dup
+    s.version = SunriseScaffold::VERSION.dup
     s.summary = "Rails CMS"
     s.description = "Sunrise is a Aimbulance CMS"
     s.email = "galeta.igor@gmail.com"

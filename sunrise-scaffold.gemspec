@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2011-03-28}
+  s.date = %q{2011-03-29}
   s.description = %q{Sunrise is a Aimbulance CMS}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -18,14 +18,39 @@ Gem::Specification.new do |s|
   s.files = [
     "README.rdoc",
     "Rakefile",
-    "lib/sunrise/version.rb"
+    "lib/generators/sunrise_scaffold/USAGE",
+    "lib/generators/sunrise_scaffold/manage_generator.rb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/controller.rb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/functional_test.rb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/helper.rb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/views/edit.html.erb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/views/form.html.erb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/views/index.html.erb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/views/item.html.erb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/views/model_filter.html.erb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/views/new.html.erb",
+    "lib/generators/sunrise_scaffold/templates/multiplay/views/show.html.erb",
+    "lib/generators/sunrise_scaffold/templates/single/controller.rb",
+    "lib/generators/sunrise_scaffold/templates/single/functional_test.rb",
+    "lib/generators/sunrise_scaffold/templates/single/helper.rb",
+    "lib/generators/sunrise_scaffold/templates/single/views/edit.html.erb",
+    "lib/generators/sunrise_scaffold/templates/single/views/form.html.erb",
+    "lib/generators/sunrise_scaffold/templates/single/views/index.html.erb",
+    "lib/generators/sunrise_scaffold/templates/single/views/item.html.erb",
+    "lib/generators/sunrise_scaffold/templates/single/views/model_filter.html.erb",
+    "lib/generators/sunrise_scaffold/templates/single/views/new.html.erb",
+    "lib/generators/sunrise_scaffold/templates/single/views/show.html.erb",
+    "lib/sunrise_scaffold.rb",
+    "lib/sunrise_scaffold/utils.rb",
+    "lib/sunrise_scaffold/version.rb"
   ]
   s.homepage = %q{https://github.com/galetahub/sunrise-scaffold}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Rails CMS}
 
   if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
