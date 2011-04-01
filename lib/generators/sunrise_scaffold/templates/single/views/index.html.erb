@@ -13,7 +13,7 @@
       </div>
       <div id="<%= plural_name %>" class="stage">
         <%%= render :partial=>"manage/<%= plural_name %>/<%= singular_name %>", :collection=>@<%= plural_name %> %>
-        <%%= will_paginate @<%= plural_name %>, options_for_pagination %>
+        <%%= paginate @<%= plural_name %> %>
       </div>
       <script type='text/javascript'>
         $(document).ready(function(){

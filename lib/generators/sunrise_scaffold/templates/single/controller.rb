@@ -21,10 +21,7 @@ class Manage::<%= controller_class_name %>Controller < Manage::BaseController
   protected
     
     def collection
-      options = { :page => params[:page], :per_page => 20 }
-      options.update @search.filter
-      
-      @<%= plural_name %> = (@<%= plural_name %> || end_of_association_chain).paginate(options)
+      @<%= plural_name %> = (@<%= plural_name %> || end_of_association_chain).merge(@search.scoped).page(params[:page])
     end
     
     def make_filter
