@@ -25,5 +25,5 @@
     </div>
   </div>
   
-  <%%= f.button :submit %>
+  <%%= f.button :submit, :url => manage_<%= parent_singular_name %>_<%= plural_name %>_path(@<%= parent_singular_name %>.id) %>
 <%% end %>
