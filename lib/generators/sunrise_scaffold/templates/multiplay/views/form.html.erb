@@ -1,7 +1,7 @@
 <%%= manage_form_for [@<%= parent_singular_name %>, @<%= singular_name %>] do |f| %> 
   
   <% unless translated_columns.empty? -%>  
-  <%%= render(:partial=>"shared/manage/locale") %>
+  <%%= render(:partial=>"manage/shared/locale") %>
   
   <%% Sunrise.available_locales.each do |locale|%>
     <%%= content_tag :div, :id=>"s#{locale}_block", :class=>"add-white-bl", :style=>(I18n.locale.to_s == locale.to_s ? nil : 'display:none;') do %>
