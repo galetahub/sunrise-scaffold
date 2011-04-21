@@ -5,7 +5,7 @@ class Manage::<%= controller_class_name %>Controller < Manage::BaseController
   
   before_filter :make_filter, :only=>[:index]
   
-  load_and_authorize_resource :<%= parent_singular_name %>, :class => <%= model_name %>
+  load_and_authorize_resource :<%= singular_name %>, :through => :<%= parent_singular_name %>
   
   def create
     create!{ manage_<%= parent_singular_name %>_<%= plural_name %>_path(@<%= parent_singular_name %>.id) }
