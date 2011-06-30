@@ -10,8 +10,10 @@
         <% end -%>
           
         <div class="buts">
-          <%%= f.submit t('manage.model_filter.search'), :style=>"display:none;" %>
-          <%%= link_to_function content_tag(:span, t('manage.model_filter.search')), "$('#form_filter').submit()", :class=>"gr" %>                
+          <%%= content_tag(:button, :value=>"search", :type=>"submit", :name=>"commit", :class=>"gr cupid-green") do %>
+            <%%= t('manage.model_filter.search') %>
+          <%% end %>
+          
           <%%= link_to t('manage.model_filter.clear'), manage_<%= plural_name %>_path, :class=>"erase" %>
         </div>
       <%% end %>
@@ -19,7 +21,7 @@
   </div>
   <div class="sort">
   	<label><%%= t('manage.sort') %></label>
-    <div class="select"><%%= link_to_function t("<%= plural_name %>.#{@search.order_column}_#{@search.order_type}", :scope => [:manage, :sort_columns], :default => :"#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
+    <div class="select-input"><%%= link_to_function t("<%= plural_name %>.#{@search.order_column}_#{@search.order_type}", :scope => [:manage, :sort_columns], :default => :"#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
     <div id='sort_select_list' class="select-list" style='display:none;'>
       <% model.attributes.each do |attribute, value| %>
       <%%= link_to_sort(t('<%= plural_name %>.<%= attribute %>_desc', :scope => [:manage, :sort_columns], :default => :<%= attribute %>_desc), :name => <%= attribute.inspect %>, :order_type => 'desc') %>
