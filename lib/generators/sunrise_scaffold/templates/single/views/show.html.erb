@@ -4,9 +4,9 @@
   </div>
 
   <div class="act-bl">
-    <%%= link_to image_tag("manage/ico_edit.gif", :title=>t('manage.edit')), edit_manage_<%= singular_name %>_path(:id=><%= singular_name %>.id), :class=>"icons" %>
+    <%%= link_to image_tag("manage/ico_edit.gif", :title=>t('manage.edit')), edit_manage_<%= singular_name %>_path(:id=>@<%= singular_name %>.id), :class=>"icons" %>
 
-    <%%= link_to image_tag("manage/ico_del.gif", :title=>t('manage.delete')), manage_<%= singular_name %>_path(:id=><%= singular_name %>.id), :method=>:delete, :confirm=>t("manage.confirm_delete"), :class=>"icons" %>
+    <%%= link_to image_tag("manage/ico_del.gif", :title=>t('manage.delete')), manage_<%= singular_name %>_path(:id=>@<%= singular_name %>.id), :method=>:delete, :confirm=>t("manage.confirm_delete"), :class=>"icons" %>
   </div>
 </div>
 
