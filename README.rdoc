@@ -4,6 +4,8 @@
   
 Before this, you must generate model (rails g model model_name) and create it in db (rake db:migrate)
   
-  rails generate sunrise_scaffold:manage model_name
+  rails generate sunrise:scaffold:manage model_name
 
-  rails generate sunrise_scaffold:manage model_name --parent=parent_model
+  rails generate sunrise:scaffold:manage model_name --parent=parent_model
+  
+Copyright (c) 2011 Aimbulance, released under the MIT license

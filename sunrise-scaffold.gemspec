@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sunrise-scaffold}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Galeta", "Pavlo Galeta"]
-  s.date = %q{2011-06-08}
+  s.date = %q{2011-07-21}
   s.description = %q{Sunrise is a Aimbulance CMS}
   s.email = %q{galeta.igor@gmail.com}
   s.extra_rdoc_files = [
@@ -18,31 +18,32 @@ Gem::Specification.new do |s|
   s.files = [
     "README.rdoc",
     "Rakefile",
-    "lib/generators/sunrise_scaffold/USAGE",
-    "lib/generators/sunrise_scaffold/manage_generator.rb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/controller.rb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/functional_test.rb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/helper.rb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/views/edit.html.erb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/views/form.html.erb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/views/index.html.erb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/views/item.html.erb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/views/model_filter.html.erb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/views/new.html.erb",
-    "lib/generators/sunrise_scaffold/templates/multiplay/views/show.html.erb",
-    "lib/generators/sunrise_scaffold/templates/single/controller.rb",
-    "lib/generators/sunrise_scaffold/templates/single/functional_test.rb",
-    "lib/generators/sunrise_scaffold/templates/single/helper.rb",
-    "lib/generators/sunrise_scaffold/templates/single/views/edit.html.erb",
-    "lib/generators/sunrise_scaffold/templates/single/views/form.html.erb",
-    "lib/generators/sunrise_scaffold/templates/single/views/index.html.erb",
-    "lib/generators/sunrise_scaffold/templates/single/views/item.html.erb",
-    "lib/generators/sunrise_scaffold/templates/single/views/model_filter.html.erb",
-    "lib/generators/sunrise_scaffold/templates/single/views/new.html.erb",
-    "lib/generators/sunrise_scaffold/templates/single/views/show.html.erb",
-    "lib/sunrise_scaffold.rb",
-    "lib/sunrise_scaffold/utils.rb",
-    "lib/sunrise_scaffold/version.rb"
+    "lib/generators/sunrise/scaffold/USAGE",
+    "lib/generators/sunrise/scaffold/manage_generator.rb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/controller.rb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/functional_test.rb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/helper.rb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/views/edit.html.erb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/views/form.html.erb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/views/index.html.erb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/views/item.html.erb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/views/model_filter.html.erb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/views/new.html.erb",
+    "lib/generators/sunrise/scaffold/templates/multiplay/views/show.html.erb",
+    "lib/generators/sunrise/scaffold/templates/single/controller.rb",
+    "lib/generators/sunrise/scaffold/templates/single/functional_test.rb",
+    "lib/generators/sunrise/scaffold/templates/single/helper.rb",
+    "lib/generators/sunrise/scaffold/templates/single/views/edit.html.erb",
+    "lib/generators/sunrise/scaffold/templates/single/views/form.html.erb",
+    "lib/generators/sunrise/scaffold/templates/single/views/index.html.erb",
+    "lib/generators/sunrise/scaffold/templates/single/views/item.html.erb",
+    "lib/generators/sunrise/scaffold/templates/single/views/model_filter.html.erb",
+    "lib/generators/sunrise/scaffold/templates/single/views/new.html.erb",
+    "lib/generators/sunrise/scaffold/templates/single/views/show.html.erb",
+    "lib/sunrise-scaffold.rb",
+    "lib/sunrise/scaffold.rb",
+    "lib/sunrise/scaffold/utils.rb",
+    "lib/sunrise/scaffold/version.rb"
   ]
   s.homepage = %q{https://github.com/galetahub/sunrise-scaffold}
   s.require_paths = ["lib"]
