@@ -22,8 +22,8 @@ module Sunrise
       end
       
       def create_tests_files
-        template "#{generator_dir}/functional_test.rb",
-                 File.join('test/functional', manage_path, "#{controller_file_name}_controller_test.rb")
+        template "#{generator_dir}/spec/controller_spec.rb",
+                 File.join('spec/controllers', manage_path, "#{controller_file_name}_controller_spec.rb")
       end
       
       def create_views_files
