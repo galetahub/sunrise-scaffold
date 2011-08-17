@@ -6,22 +6,28 @@
           <div class="r-corn">
             <%%= link_to t('manage.menu.<%= plural_name %>'), manage_<%= plural_name %>_path, :class=>"dark-text" %>
             <div class="act-bl">
-              <%%= link_to t('manage.add'), new_manage_<%= singular_name %>_path, :class=>"create" %>
+              <%% if can? :create, <%= class_name %>, :context => :manage %>
+                <%%= link_to t('manage.add'), new_manage_<%= singular_name %>_path, :class=>"create" %>
+              <%% end -%>
             </div>
           </div>
         </div>
       </div>
+      
       <div id="<%= plural_name %>" class="stage">
         <%%= render :partial=>"manage/<%= plural_name %>/<%= singular_name %>", :collection=>@<%= plural_name %> %>
         <%%= paginate @<%= plural_name %>, :theme => 'manage' %>
       </div>
+      
       <script type='text/javascript'>
         $(document).ready(function(){
           Manage.init_collection('<%= plural_name %>', 'dinamic-bl');
         });
       </script>
+      
     </div>
   </div>
+  
   <div class="right-part">
     <div class="filter-right">
       <%%= render :partial=>"manage/<%= plural_name %>/model_filter" %>
