@@ -2,7 +2,6 @@
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
-require File.join(File.dirname(__FILE__), 'lib', 'sunrise', 'scaffold', 'version')
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -22,23 +21,4 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
-end
-
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |s|
-    s.name = "sunrise-scaffold"
-    s.version = Sunrise::Scaffold::VERSION.dup
-    s.summary = "Rails CMS"
-    s.description = "Sunrise is a Aimbulance CMS"
-    s.email = "galeta.igor@gmail.com"
-    s.homepage = "https://github.com/galetahub/sunrise-scaffold"
-    s.authors = ["Igor Galeta", "Pavlo Galeta"]
-    s.files =  FileList["[A-Z]*", "lib/**/*"]
-    s.extra_rdoc_files = FileList["[A-Z]*"] - %w(Gemfile Rakefile)
-  end
-  
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler not available. Install it with: gem install jeweler"
 end

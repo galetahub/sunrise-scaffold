@@ -1,10 +1,10 @@
 class Manage::<%= controller_class_name %>Controller < Manage::BaseController
   inherit_resources
-  defaults :route_prefix => 'manage'
-  
-  before_filter :make_filter, :only=>[:index]
 
   load_and_authorize_resource :class => <%= class_name %>
+  
+  has_scope :with_title, :as => :title, :only => :index
+  order_by :created_at, :updated_at
   
   def create
     create!{ manage_<%= plural_name %>_path }
@@ -21,11 +21,6 @@ class Manage::<%= controller_class_name %>Controller < Manage::BaseController
   protected
     
     def collection
-      @<%= plural_name %> = (@<%= plural_name %> || end_of_association_chain).merge(@search.scoped).page(params[:page])
-    end
-    
-    def make_filter
-      @search = Sunrise::ModelFilter.new(<%= class_name %>, :attributes=>[ <%= model.attributes.keys.map{ |a| ":#{a}" }.join(', ') %> ] )
-      @search.update_attributes(params[:search])
+      @<%= plural_name %> = (@<%= plural_name %> || end_of_association_chain).order(search_filter.order).page(params[:page])
     end
 end

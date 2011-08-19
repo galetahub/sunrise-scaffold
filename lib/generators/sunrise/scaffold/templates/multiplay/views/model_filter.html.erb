@@ -2,12 +2,14 @@
   <div class="filt-bl">
     <%%= link_to_function t('manage.model_filter.title'), "Manage.toggle_element('block_filter')", :class=>"dark-arr" %>
     
+    <%%= t('manage.model_filter.total_count') %>: <%%= @<%= plural_name %>.total_count %>
+    
     <%%= cookie_content_tag(:div, :id=>"block_filter", :class=>"filt") do %>
-      <%%= form_for @search, :as => :search, :url=>manage_<%= parent_singular_name %>_<%= plural_name %>_path(@<%= parent_singular_name %>.id), :html=>{:method=>:get, :id=>"form_filter"} do |f| %>
-        <% model.attributes.each do |attribute, value| -%>
-          <%%= f.label :<%= attribute %>, t('activerecord.attributes.<%= singular_name %>.<%= attribute %>') %>
-          <%%= f.text_field :<%= attribute %>, :class=>"text" %>
-        <% end -%>
+      <%%= form_for search_filter, :url=>manage_<%= parent_singular_name %>_<%= plural_name %>_path(@<%= parent_singular_name %>.id), :html=>{:method=>:get} do |f| %>
+        <%% controller.scopes_configuration.each do |key, value| %>
+          <%%= f.label value[:as], t(value[:as], :scope => "activerecord.attributes.<%= singular_name %>") %>
+          <%%= f.text_field value[:as], :class => "text", :name => value[:as] %>
+        <%% end %>
         
         <div class="buts">
           <%%= content_tag(:button, :value=>"search", :type=>"submit", :name=>"commit", :class=>"gr cupid-green") do %>
@@ -23,10 +25,10 @@
   	<label><%%= t('manage.sort') %></label>
     <div class="select-input"><%%= link_to_function t("<%= plural_name %>.#{@search.order_column}_#{@search.order_type}", :scope => [:manage, :sort_columns], :default => :"#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
     <div id='sort_select_list' class="select-list" style='display:none;'>
-      <% model.attributes.each do |attribute, value| -%>
-      <%%= link_to_sort(t('<%= plural_name %>.<%= attribute %>_desc', :scope => [:manage, :sort_columns], :default => :<%= attribute %>_desc), :name => <%= attribute.inspect %>, :order_type => 'desc') %>
-      <%%= link_to_sort(t('<%= plural_name %>.<%= attribute %>_asc', :scope => [:manage, :sort_columns], :default => :<%= attribute %>_asc), :name => <%= attribute.inspect %>, :order_type => 'asc') %>      
-      <% end %>
+      <%% controller.orders_configuration.each do |key, value| %>
+        <%%= link_to_sort(t("#{key}_desc", :scope => "manage.<%= plural_name %>.sort"), :name => key, :order_type=>'desc') %>
+        <%%= link_to_sort(t("#{key}_asc", :scope => "manage.<%= plural_name %>.sort"), :name => key, :order_type=>'asc') %>
+      <%% end %>
     </div>
   </div>
   
