@@ -1,6 +1,10 @@
 # Configure Rails Envinronment
 ENV["RAILS_ENV"] = "test"
 
+# Clear tmp folder
+require "fileutils"
+FileUtils.rm_r "#{File.dirname(__FILE__)}/test/tmp", :force => true 
+
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require "rails/test_help"
 
