@@ -23,7 +23,8 @@
   </div>
   <div class="sort">
   	<label><%%= t('manage.sort') %></label>
-    <div class="select-input"><%%= link_to_function t("<%= plural_name %>.#{@search.order_column}_#{@search.order_type}", :scope => [:manage, :sort_columns], :default => :"#{@search.order_column}_#{@search.order_type}"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %></div>
+    <div class="select-input"><%%= link_to_function t(search_filter.current_order, :scope => "manage.<%= plural_name %>.sort"), "SelectList.toggle(event)", :class=>"corn", :id=>'sort_select' %>
+    </div>
     <div id='sort_select_list' class="select-list" style='display:none;'>
       <%% controller.orders_configuration.each do |key, value| %>
         <%%= link_to_sort(t("#{key}_desc", :scope => "manage.<%= plural_name %>.sort"), :name => key, :order_type=>'desc') %>
